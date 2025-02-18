@@ -27,8 +27,13 @@
                 @if (Route::has('login'))
                     <div class="  p-6 text-right">
                         @auth
-                            <a href="{{ url('/dashboard') }}" class="text-pink-600 hover:text-pink-500">Déconnexion</a>
+                            <div class="flex gap-4">
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit" class="text-pink-600 hover:text-pink-500">Déconnexion</button>
+                            </form>
                             <a href="{{ url('/dashboard') }}" class="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-4 py-2 rounded-md hover:from-pink-600 hover:to-purple-600">profil</a>
+                    </div>
                         @else
                             <a href="{{ route('login') }}" class="text-pink-600 hover:text-pink-500">Log in</a>
 

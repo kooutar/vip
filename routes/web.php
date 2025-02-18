@@ -23,6 +23,7 @@ Route::get('/test', function (){
 });
 Route::get('/connection',[AuthController::class , "index"]);
 Route::get('/registre',[AuthController::class , "registre"]);
+//Route::get('/registre' ,'blog.connection');
 
 
 
